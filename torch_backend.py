@@ -138,6 +138,8 @@ class Network(nn.Module):
             #only compute nodes that are not supplied as inputs.
             if k not in outputs: 
                 outputs[k] = node(*[outputs[x] for x in ins])
+
+        # print(outputs["logits"])
         return outputs
     
     def half(self):
